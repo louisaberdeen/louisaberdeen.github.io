@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  title: "Are nets already clean?"
+  title: "How clean are neural nets, how long is a piece of string?"
   site-url: https://louisaberdeen.dev/are-nets-already-clean/
 
 format:
