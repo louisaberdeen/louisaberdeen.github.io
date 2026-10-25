@@ -1,0 +1,17 @@
+project:
+  type: book
+
+book:
+  title: "Jaxformer"
+  author: "Louis"
+  site-url: https://louisaberdeen.dev/jaxformer/
+  chapters:
+    - index.md
+    - chapters/01-history.md
+    - chapters/02-attention.md
+    - chapters/03-training.md
+
+format:
+  html:
+    theme: [darkly, sunset.scss]
+    toc: true

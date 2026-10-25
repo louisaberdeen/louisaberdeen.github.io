@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="10 0 570 620" font-family="Lato, Helvetica, Arial, sans-serif" font-size="13">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#c9d4dc"/></marker></defs>
+<rect x="65" y="262" width="210" height="218" rx="10" fill="#2f3c4b"/>
+<rect x="305" y="136" width="200" height="344" rx="10" fill="#2f3c4b"/>
+<text x="55" y="375" text-anchor="end" fill="#c9d4dc">N×</text>
+<text x="515" y="310" text-anchor="start" fill="#c9d4dc">N×</text>
+<rect x="95" y="540" width="150" height="36" rx="6" fill="#edc19e"/>
+<text x="170" y="555.0" text-anchor="middle" fill="#121418">Input</text>
+<text x="170" y="569.0" text-anchor="middle" fill="#121418">Embedding</text>
+<rect x="95" y="420" width="150" height="44" rx="6" fill="#f8ba7d"/>
+<text x="170" y="439.0" text-anchor="middle" fill="#121418">Multi-Head</text>
+<text x="170" y="453.0" text-anchor="middle" fill="#121418">Attention</text>
+<rect x="95" y="374" width="150" height="24" rx="6" fill="#fdf6ef"/>
+<text x="170" y="390.0" text-anchor="middle" fill="#121418">Add &amp; Norm</text>
+<rect x="95" y="318" width="150" height="40" rx="6" fill="#84b4d8"/>
+<text x="170" y="335.0" text-anchor="middle" fill="#121418">Feed</text>
+<text x="170" y="349.0" text-anchor="middle" fill="#121418">Forward</text>
+<rect x="95" y="276" width="150" height="24" rx="6" fill="#fdf6ef"/>
+<text x="170" y="292.0" text-anchor="middle" fill="#121418">Add &amp; Norm</text>
+<text x="170" y="610" text-anchor="middle" fill="#c9d4dc">Inputs</text>
+<path d="M170 596V578" fill="none" stroke="#c9d4dc" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M170 540V521" fill="none" stroke="#c9d4dc" stroke-width="1.5" marker-end="url(#a)"/>
+<circle cx="170" cy="510" r="9" fill="none" stroke="#c9d4dc" stroke-width="1.5"/>
+<path d="M165 510H175M170 505V515" fill="none" stroke="#c9d4dc" stroke-width="1.5"/>
+<circle cx="100" cy="510" r="11" fill="none" stroke="#c9d4dc" stroke-width="1.5"/>
+<path d="M92 510C95 500 99 500 100 510S105 520 108 510" fill="none" stroke="#c9d4dc" stroke-width="1.5"/>
+<path d="M111 510H159" fill="none" stroke="#c9d4dc" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="82" y="506" text-anchor="end" fill="#c9d4dc">Positional</text>
+<text x="82" y="520" text-anchor="end" fill="#c9d4dc">Encoding</text>
+<path d="M170 501V488M130 488H210" fill="none" stroke="#c9d4dc" stroke-width="1.5"/>
+<path d="M130 488V466" fill="none" stroke="#c9d4dc" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M170 488V466" fill="none" stroke="#c9d4dc" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M210 488V466" fill="none" stroke="#c9d4dc" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M170 488H80V386H93" fill="none" stroke="#c9d4dc" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M170 420V400" fill="none" stroke="#c9d4dc" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M170 374V360" fill="none" stroke="#c9d4dc" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M170 366H80V288H93" fill="none" stroke="#c9d4dc" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M170 318V302" fill="none" stroke="#c9d4dc" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="325" y="540" width="150" height="36" rx="6" fill="#edc19e"/>
+<text x="400" y="555.0" text-anchor="middle" fill="#121418">Output</text>
+<text x="400" y="569.0" text-anchor="middle" fill="#121418">Embedding</text>
+<rect x="325" y="420" width="150" height="44" rx="6" fill="#f8ba7d"/>
+<text x="400" y="432.0" text-anchor="middle" fill="#121418">Masked</text>
+<text x="400" y="446.0" text-anchor="middle" fill="#121418">Multi-Head</text>
+<text x="400" y="460.0" text-anchor="middle" fill="#121418">Attention</text>
+<rect x="325" y="374" width="150" height="24" rx="6" fill="#fdf6ef"/>
+<text x="400" y="390.0" text-anchor="middle" fill="#121418">Add &amp; Norm</text>
+<rect x="325" y="308" width="150" height="44" rx="6" fill="#f8ba7d"/>
+<text x="400" y="327.0" text-anchor="middle" fill="#121418">Multi-Head</text>
+<text x="400" y="341.0" text-anchor="middle" fill="#121418">Attention</text>
+<rect x="325" y="262" width="150" height="24" rx="6" fill="#fdf6ef"/>
+<text x="400" y="278.0" text-anchor="middle" fill="#121418">Add &amp; Norm</text>
+<rect x="325" y="196" width="150" height="40" rx="6" fill="#84b4d8"/>
+<text x="400" y="213.0" text-anchor="middle" fill="#121418">Feed</text>
+<text x="400" y="227.0" text-anchor="middle" fill="#121418">Forward</text>
+<rect x="325" y="150" width="150" height="24" rx="6" fill="#fdf6ef"/>
+<text x="400" y="166.0" text-anchor="middle" fill="#121418">Add &amp; Norm</text>
+<rect x="325" y="88" width="150" height="28" rx="6" fill="#afd2e4"/>
+<text x="400" y="106.0" text-anchor="middle" fill="#121418">Linear</text>
+<rect x="325" y="40" width="150" height="28" rx="6" fill="#afd2e4"/>
+<text x="400" y="58.0" text-anchor="middle" fill="#121418">Softmax</text>
+<text x="400" y="610" text-anchor="middle" fill="#c9d4dc">Outputs (shifted right)</text>
+<path d="M400 596V578" fill="none" stroke="#c9d4dc" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M400 540V521" fill="none" stroke="#c9d4dc" stroke-width="1.5" marker-end="url(#a)"/>
+<circle cx="400" cy="510" r="9" fill="none" stroke="#c9d4dc" stroke-width="1.5"/>
+<path d="M395 510H405M400 505V515" fill="none" stroke="#c9d4dc" stroke-width="1.5"/>
+<circle cx="470" cy="510" r="11" fill="none" stroke="#c9d4dc" stroke-width="1.5"/>
+<path d="M462 510C465 500 469 500 470 510S475 520 478 510" fill="none" stroke="#c9d4dc" stroke-width="1.5"/>
+<path d="M459 510H411" fill="none" stroke="#c9d4dc" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="488" y="506" text-anchor="start" fill="#c9d4dc">Positional</text>
+<text x="488" y="520" text-anchor="start" fill="#c9d4dc">Encoding</text>
+<path d="M400 501V488M360 488H440" fill="none" stroke="#c9d4dc" stroke-width="1.5"/>
+<path d="M360 488V466" fill="none" stroke="#c9d4dc" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M400 488V466" fill="none" stroke="#c9d4dc" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M440 488V466" fill="none" stroke="#c9d4dc" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M400 488H490V386H477" fill="none" stroke="#c9d4dc" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M400 420V400" fill="none" stroke="#c9d4dc" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M440 374V354" fill="none" stroke="#c9d4dc" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M440 364H490V274H477" fill="none" stroke="#c9d4dc" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M170 276V250H290V364H400" fill="none" stroke="#c9d4dc" stroke-width="1.5"/>
+<path d="M360 364V354" fill="none" stroke="#c9d4dc" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M400 364V354" fill="none" stroke="#c9d4dc" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M400 308V288" fill="none" stroke="#c9d4dc" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M400 262V238" fill="none" stroke="#c9d4dc" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M400 250H490V162H477" fill="none" stroke="#c9d4dc" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M400 196V176" fill="none" stroke="#c9d4dc" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M400 150V118" fill="none" stroke="#c9d4dc" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M400 88V70" fill="none" stroke="#c9d4dc" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M400 40V24" fill="none" stroke="#c9d4dc" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="400" y="14" text-anchor="middle" fill="#c9d4dc">Output Probabilities</text>
+</svg>
