@@ -25,7 +25,7 @@ jobs:
       - name: Build site
         run: |
           mkdir public
-          cp index.html info.html CNAME public/
+          cp index.html info.html public/
           quarto render jaxformer
           cp -r jaxformer/_book public/jaxformer
           quarto render are-nets-already-clean
