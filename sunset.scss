@@ -1,0 +1,30 @@
+/*-- scss:defaults --*/
+// Palette sampled from pics/ sunsets (Bath, 2026-09-28)
+$dusk-sky: #84b4d8;     // upper sky
+$pale-sky: #afd2e4;     // sky above the glow
+$cloud-peach: #edc19e;  // lit cirrus
+$horizon: #f8ba7d;      // horizon glow
+$ember: #c8763a;        // horizon glow, darkened for text contrast
+$slate: #2f3c4b;        // hills at dusk
+$night: #121418;        // tree silhouette
+$cream: #fdf6ef;        // page
+
+$body-bg: $night;
+$body-color: $cream;
+$headings-color: $horizon;
+$link-color: $dusk-sky;
+$primary: $horizon;
+$secondary: $slate;
+$sidebar-bg: $night;
+$sidebar-fg: $pale-sky;
+$footer-bg: $night;
+$code-color: $cloud-peach;
+$code-block-bg: $slate;
+$border-color: $slate;
+$input-bg: $slate;
+$input-color: $cream;
+
+/*-- scss:rules --*/
+main h1.title { border-bottom: 3px solid $horizon; padding-bottom: .2em; }
+blockquote { border-left-color: $dusk-sky; }
+a:hover { color: $horizon; }
