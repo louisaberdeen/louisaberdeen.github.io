@@ -6,6 +6,8 @@ I love Richard Feyman and his lectures are a big influence for why I studied mat
 
 I want to push myself to understand these AI models as deeply as I possibly can, because it seems likely they are the most sigificant technological development in history, so it will probably come in handy.
 
+I use jax for all my model and training code. Almost every function you see in this book will have ~the same implementation in numpy, the benefit of jax is using its Just In Time (JIT) compilation to fuse kernels to get close to optimal utilisation, particularly on Google TPU chips. 
+
 ## A point on AI assistance
 I am a strong believer in using AI to assist with learning, coding, and reasearching. However, AI prose is extremely noticable and unenjoyable to read. I have elected to not have Claude write a single word of this series and in the jaxformer repository I didn't use Claude to write any of the model code, I did use Claude to make getting everything to run in google colab easier. I have used Claude to review my writing, to make the diagrams you see.
 
@@ -17,3 +19,4 @@ What I would recommend reading afterwards or if you want to go deeper:
 - https://rlvrbook.com/ 
 - https://rlhfbook.com/ 
 - https://djdumpling.github.io/2026/01/31/frontier_training.html
+- https://www.dwarkesh.com/p/reiner-pope

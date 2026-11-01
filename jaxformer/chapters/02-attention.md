@@ -43,7 +43,37 @@ X = X + feed_forward(layer_norm(X, gamma2, beta2), W_1, W_2)
 
 ## Position
 
-There is one important piece we haven't spoken about yet, how does the model know the token position relative to each other since attention has the same score no matter what order, called permutation equivariance (work through it yourself to see if you reorder the attention calculation the score is the same). I will write a piece on position embedding and RoPE [also remember the jane street article on position embeddings]
+There is one important piece we haven't spoken about yet: How does the model know the token position relative to each other? since attention has the same score no matter what order, called permutation equivariance (work through it yourself to see if you reorder the attention calculation the score is the same). The sentence "The dog bit the man" is very differnt from "The man bit the dog".
+
+The way this is done is by building in a postition embedding, either a learned position embedding or a constructed one. The simplest way of doing this would be to have an absolute position embedding. 
+
+```python
+# Simplest
+x = token_embeddings + np.arange(seq_len)[:, None] / seq_len
+
+#Used in GPT-2
+pe = np.random.normal(size=(max_len, d_model))  # trained like any other weight
+x = token_embeddings + pe[:seq_len]
+```
+
+So for each token up to our maximum sequence length we add a modification to the token embedings which describe their absolute postion in the model. The issue with this approach is it is brittle to a few things; first is the absolute nature means the model doesn't generalise well to situations where the meaning in a sequence is similar but the particular ordering could confuse the model, and the second is the model often doesn't perform well futher into it's context window.
+
+What is done instead is called Rotary Positon Embeddings (RoPE)
+
+```python
+def rope(x, base=10000.0):
+    seq_len, d = x.shape[-2:]
+    theta = base ** (-jnp.arange(0, d, 2) / d)      
+    angles = jnp.arange(seq_len)[:, None] * theta   
+    cos, sin = jnp.cos(angles), jnp.sin(angles)
+
+    x1, x2 = x[..., 0::2], x[..., 1::2]              
+    rotated = jnp.stack([x1 * cos - x2 * sin,
+                         x1 * sin + x2 * cos], axis=-1)
+    return rotated.reshape(x.shape)
+```
+
+talk though https://blog.janestreet.com/using-group-theory-to-explore-positional-encodings-attention/ basically
 
 ## Training a decoder: next-token prediction
 
