@@ -33,7 +33,7 @@
       const bar = ('█'.repeat(full) + (part ? ' ▏▎▍▌▋▊▉'[part] : '')).padEnd(W);
       const pct = String(Math.round(step / N * 100)).padStart(3);
       log.textContent += `Epoch ${String(epoch).padStart(3)}:${pct}%|${bar}| ${String(step).padStart(2)}/${N} [loss=${loss.toFixed(4)}] `;
-      if (step === N) { step = 0; epoch++; }
+      if (step === N) { if (epoch % 100 === 0) log.textContent += "\nhere\n"; step = 0; epoch++; }
       if (log.textContent.length > 20000) log.textContent = log.textContent.slice(-10000);
       header.scrollTop = header.scrollHeight;
     }, 90), 2000);
