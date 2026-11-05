@@ -26,17 +26,29 @@
     const log = document.getElementById('log');
     let epoch = 1, step = 0, loss = 2.5;
     const N = 50, W = 20;
-    setTimeout(() => setInterval(() => {
-      step++;
-      loss *= 0.999;
-      const x = step / N * W, full = Math.floor(x), part = Math.floor((x - full) * 8);
-      const bar = ('█'.repeat(full) + (part ? ' ▏▎▍▌▋▊▉'[part] : '')).padEnd(W);
-      const pct = String(Math.round(step / N * 100)).padStart(3);
-      log.textContent += `Epoch ${String(epoch).padStart(3)}:${pct}%|${bar}| ${String(step).padStart(2)}/${N} [loss=${loss.toFixed(4)}] `;
-      if (step === N) { if (epoch % 100 === 0) log.textContent += "\nhere\n"; step = 0; epoch++; }
+    const queue = [];
+    function tick() {
+      let delay = 90;
+      if (queue.length) {
+        log.textContent += queue.shift();
+        delay = 1000;
+      } else {
+        step++;
+        loss *= 0.999;
+        const x = step / N * W, full = Math.floor(x), part = Math.floor((x - full) * 8);
+        const bar = ('█'.repeat(full) + (part ? ' ▏▎▍▌▋▊▉'[part] : '')).padEnd(W);
+        const pct = String(Math.round(step / N * 100)).padStart(3);
+        log.textContent += `Epoch ${String(epoch).padStart(3)}:${pct}%|${bar}| ${String(step).padStart(2)}/${N} [loss=${loss.toFixed(4)}] `;
+        if (step === N) {
+          if (epoch % 100 === 0) queue.push('\nhere\n', 'here1\n', 'here2\n');
+          step = 0; epoch++;
+        }
+      }
       if (log.textContent.length > 20000) log.textContent = log.textContent.slice(-10000);
       header.scrollTop = header.scrollHeight;
-    }, 90), 2000);
+      setTimeout(tick, delay);
+    }
+    setTimeout(tick, 2000);
   </script>
 </body>
 </html>
