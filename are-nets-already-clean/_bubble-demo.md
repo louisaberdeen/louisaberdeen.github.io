@@ -1,9 +1,7 @@
 ```{=html}
 <div class="dim-demo">
   <svg id="bub-svg" viewBox="0 0 560 330" role="img" aria-label="Gaussian samples drawn at their normalised distance from the centre as the dimension d sweeps from 2 to 10,000. The dots start as a filled disc and collapse into a thin ring at radius 1."></svg>
-  <p class="dim-note">Each dot is one Gaussian sample, drawn at its distance from the centre ‖x‖ / √<i>d</i> and a random
-  angle, as <i>d</i> sweeps from 2 to 10,000 on a log scale. In 2D the dots fill a disc; in high dimensions almost every
-  sample is the same distance out. The dashed circle is radius 1.</p>
+  <p class="dim-note">Gaussian samples at distance ‖x‖ / √<i>d</i>.</p>
 </div>
 
 <script>

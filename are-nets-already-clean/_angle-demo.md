@@ -1,8 +1,7 @@
 ```{=html}
 <div class="dim-demo">
   <svg id="ang-svg" viewBox="0 0 560 300" role="img" aria-label="Distribution of the angle between two random unit vectors as the dimension d sweeps from 2 to 10,000. The curve starts flat and narrows into a spike at 90 degrees."></svg>
-  <p class="dim-note">The angle between two random unit vectors as <i>d</i> sweeps from 2 to 10,000, evenly on a log scale.
-  In 2D every angle is equally likely; as <i>d</i> grows the angle piles up at 90°. The faint curves mark each decade.</p>
+  <p class="dim-note">Angle between two random unit vectors.</p>
 </div>
 
 <style>

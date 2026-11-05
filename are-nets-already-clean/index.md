@@ -53,7 +53,7 @@ $$
 z_n = w_n \cdot x = \sum_{i=1}^ma_i(w_n\cdot u_i), \quad h_n = \sigma(z_n+b_n)
 $$
 Remember a neuron is just a row $n$ in $W_{in}$. The matrix $A = W_{in}U$, with entries $A_{ni} = w_n \cdot u_i$, tells you how much each neuron $n$ responds to feature $i$.
-![Each row of $A$ is one neuron, each column one feature. Neuron 2 reads one feature strongly; neuron 5 reads three.](figures/neuron-feature-matrix.svg){fig-alt="Heatmap of A with 6 neuron rows and 10 feature columns. Neuron 2 has one bright cell and is labelled monosemantic; neuron 5 has three bright cells and is labelled polysemantic."}
+![The matrix $A$.](figures/neuron-feature-matrix.svg){fig-alt="Heatmap of A with 6 neuron rows and 10 feature columns. Neuron 2 has one bright cell and is labelled monosemantic; neuron 5 has three bright cells and is labelled polysemantic."}
 - Monosemantic: one large entry in row $n$ of $A$
 - Polysemantic: several large entries in row $n$ of $A$
 
@@ -78,7 +78,7 @@ Near-orthogonality and sparsity keep the noise floor low. The bias sets a thresh
 
 Elhage et al. (2022) show the trade-off in a toy model: dense features get their own dimensions, sparse features go into superposition.
 
-![Reading $u_j \cdot x$ for every feature $j$. With 20 active features the noise around 0 is narrow, and the threshold separates inactive from active. With every feature active the two overlap and no threshold works.](figures/interference.svg){fig-alt="Two panels showing the readout u_j dot x. Sparse case: a narrow bump at 0 for inactive features and a narrow bump at 1 for active ones, with a dashed threshold at 0.3 between them. Dense case: two wide overlapping bumps that the threshold cannot separate."}
+![Signal vs interference.](figures/interference.svg){fig-alt="Two panels showing the readout u_j dot x. Sparse case: a narrow bump at 0 for inactive features and a narrow bump at 1 for active ones, with a dashed threshold at 0.3 between them. Dense case: two wide overlapping bumps that the threshold cannot separate."}
 ### 3. Feynman explanation
 I would explain the issue like this
 
