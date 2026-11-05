@@ -7,7 +7,7 @@
   <style>
     header { height: 10rem; overflow: hidden; margin-bottom: 1rem; }
     header h1 { margin-top: 0; }
-    #log { margin: 0; font: 0.75rem/1.2 ui-monospace, monospace; white-space: pre-wrap; word-break: break-all; color: #666; }
+    #log { margin: 0; font: 0.75rem/1.2 Menlo, Consolas, 'DejaVu Sans Mono', monospace; white-space: pre-wrap; word-break: break-all; color: #666; }
     body { max-width: 40rem; margin: 4rem auto; padding: 0 1rem; font: 1.1rem/1.6 system-ui, sans-serif; }
   </style>
 </head>
@@ -29,8 +29,8 @@
     setTimeout(() => setInterval(() => {
       step++;
       loss *= 0.999;
-      const fill = Math.round(step / N * W);
-      const bar = '#'.repeat(fill) + ' '.repeat(W - fill);
+      const x = step / N * W, full = Math.floor(x), part = Math.floor((x - full) * 8);
+      const bar = ('█'.repeat(full) + (part ? ' ▏▎▍▌▋▊▉'[part] : '')).padEnd(W);
       const pct = String(Math.round(step / N * 100)).padStart(3);
       log.textContent += `Epoch ${String(epoch).padStart(3)}:${pct}%|${bar}| ${String(step).padStart(2)}/${N} [loss=${loss.toFixed(4)}] `;
       if (step === N) { step = 0; epoch++; }
