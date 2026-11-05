@@ -41,9 +41,11 @@ The $u_i$ cannot all be orthogonal because $m > d$ by the pigeonhole principle, 
 
 In 2D, two random directions often point in similar directions. In 10,000D, there are so many directions that two random vectors are almost always at ~90°. The Johnson–Lindenstrauss theorem states you can put $n$ points into $k = O(\log n / \varepsilon^2)$ dimensions and keep all distances within a factor $1 \pm \varepsilon$, which you can invert to get $n = e^{O(\varepsilon^2 k)}$ nearly orthogonal directions in $k$ dimensions.
 
-{fire diagram here}
+![The angle between two random unit vectors. In 2D every angle is equally likely; as $d$ grows the angle piles up at 90°.](figures/random-angles.svg){fig-alt="Distribution of the angle between two random unit vectors for d = 2, 10, 100 and 10,000. The d = 2 curve is flat; the others peak at 90 degrees and get narrower as d grows."}
 
-The sum of many small independent effects is Gaussian. The dot product of two random unit vectors is a sum of $d$ small terms, so $u \cdot v \sim \mathcal{N}(0, 1/d)$ and the angle concentrates at 90°. A Gaussian in high dimensions is like a soap bubble: all its mass is on the surface. {this would make a nice diagram.}
+The sum of many small independent effects is Gaussian. The dot product of two random unit vectors is a sum of $d$ small terms, so $u \cdot v \sim \mathcal{N}(0, 1/d)$ and the angle concentrates at 90°. A Gaussian in high dimensions is like a soap bubble: all its mass is on the surface.
+
+![The soap bubble. In 2D most Gaussian samples are near the centre; in 1,000D almost all of them are at the same distance from it.](figures/gaussian-bubble.svg){fig-alt="Three scatter plots of Gaussian samples, each drawn at its normalised distance from the centre. For d = 2 the dots fill a disc, for d = 10 they form a thick ring, for d = 1,000 a thin ring at radius 1."}
 
 #### 2.2 A neuron reads all incoming features
 A neuron $n$ in an MLP computes 
@@ -51,7 +53,7 @@ $$
 z_n = w_n \cdot x = \sum_{i=1}^ma_i(w_n\cdot u_i), \quad h_n = \sigma(z_n+b_n)
 $$
 Remember a neuron is just a row $n$ in $W_{in}$. The matrix $A = W_{in}U$, with entries $A_{ni} = w_n \cdot u_i$, tells you how much each neuron $n$ responds to feature $i$.
-{another good diagram}
+![Each row of $A$ is one neuron, each column one feature. Neuron 2 reads one feature strongly; neuron 5 reads three.](figures/neuron-feature-matrix.svg){fig-alt="Heatmap of A with 6 neuron rows and 10 feature columns. Neuron 2 has one bright cell and is labelled monosemantic; neuron 5 has three bright cells and is labelled polysemantic."}
 - Monosemantic: one large entry in row $n$ of $A$
 - Polysemantic: several large entries in row $n$ of $A$
 
@@ -76,7 +78,7 @@ Near-orthogonality and sparsity keep the noise floor low. The bias sets a thresh
 
 Elhage et al. (2022) show the trade-off in a toy model: dense features get their own dimensions, sparse features go into superposition.
 
-{diagram here would be great}
+![Reading $u_j \cdot x$ for every feature $j$. With 20 active features the noise around 0 is narrow, and the threshold separates inactive from active. With every feature active the two overlap and no threshold works.](figures/interference.svg){fig-alt="Two panels showing the readout u_j dot x. Sparse case: a narrow bump at 0 for inactive features and a narrow bump at 1 for active ones, with a dashed threshold at 0.3 between them. Dense case: two wide overlapping bumps that the threshold cannot separate."}
 ### 3. Feynman explanation
 I would explain the issue like this
 
