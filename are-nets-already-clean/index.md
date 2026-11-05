@@ -41,11 +41,11 @@ The $u_i$ cannot all be orthogonal because $m > d$ by the pigeonhole principle, 
 
 In 2D, two random directions often point in similar directions. In 10,000D, there are so many directions that two random vectors are almost always at ~90°. The Johnson–Lindenstrauss theorem states you can put $n$ points into $k = O(\log n / \varepsilon^2)$ dimensions and keep all distances within a factor $1 \pm \varepsilon$, which you can invert to get $n = e^{O(\varepsilon^2 k)}$ nearly orthogonal directions in $k$ dimensions.
 
-![The angle between two random unit vectors. In 2D every angle is equally likely; as $d$ grows the angle piles up at 90°.](figures/random-angles.svg){fig-alt="Distribution of the angle between two random unit vectors for d = 2, 10, 100 and 10,000. The d = 2 curve is flat; the others peak at 90 degrees and get narrower as d grows."}
+{{< include _angle-demo.md >}}
 
 The sum of many small independent effects is Gaussian. The dot product of two random unit vectors is a sum of $d$ small terms, so $u \cdot v \sim \mathcal{N}(0, 1/d)$ and the angle concentrates at 90°. A Gaussian in high dimensions is like a soap bubble: all its mass is on the surface.
 
-![The soap bubble. In 2D most Gaussian samples are near the centre; in 1,000D almost all of them are at the same distance from it.](figures/gaussian-bubble.svg){fig-alt="Three scatter plots of Gaussian samples, each drawn at its normalised distance from the centre. For d = 2 the dots fill a disc, for d = 10 they form a thick ring, for d = 1,000 a thin ring at radius 1."}
+{{< include _bubble-demo.md >}}
 
 #### 2.2 A neuron reads all incoming features
 A neuron $n$ in an MLP computes 
