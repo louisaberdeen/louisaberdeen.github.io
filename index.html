@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Louis Aberdeen</title>
   <style>
+    #log { height: 12rem; overflow: hidden; margin: 2rem 0; font: 0.75rem/1.2 ui-monospace, monospace; white-space: pre-wrap; word-break: break-all; color: #666; }
     body { max-width: 40rem; margin: 4rem auto; padding: 0 1rem; font: 1.1rem/1.6 system-ui, sans-serif; }
   </style>
 </head>
@@ -15,5 +16,22 @@
     <li><a href="/jaxformer/" target="_blank">Jaxformer</a>: notes on understanding transformers (work in progress)</li>
     <li><a href="/are-nets-already-clean/" target="_blank">How clean are neural nets, how long is a piece of string?</a>: reading notes on superposition and interpretability (work in progress)</li>
   </ul>
+  <pre id="log"></pre>
+  <script>
+    const log = document.getElementById('log');
+    let epoch = 1, step = 0, loss = 2.5;
+    const N = 50, W = 20;
+    setInterval(() => {
+      step++;
+      loss *= 0.999;
+      const fill = Math.round(step / N * W);
+      const bar = '#'.repeat(fill) + ' '.repeat(W - fill);
+      const pct = String(Math.round(step / N * 100)).padStart(3);
+      log.textContent += `Epoch ${String(epoch).padStart(3)}:${pct}%|${bar}| ${String(step).padStart(2)}/${N} [loss=${loss.toFixed(4)}] `;
+      if (step === N) { step = 0; epoch++; }
+      if (log.textContent.length > 20000) log.textContent = log.textContent.slice(-10000);
+      log.scrollTop = log.scrollHeight;
+    }, 50);
+  </script>
 </body>
 </html>
