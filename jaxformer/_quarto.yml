@@ -15,5 +15,5 @@ format:
   html:
     theme:
       light: [cosmo, solarized-light.scss]
-      dark: [darkly, solarized-dark.scss]
+      dark: [cosmo, solarized-dark.scss]
     toc: true
