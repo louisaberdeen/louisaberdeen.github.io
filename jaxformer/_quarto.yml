@@ -5,6 +5,11 @@ book:
   title: "Jaxformer"
   author: "Louis"
   site-url: https://louisaberdeen.dev/jaxformer/
+  sidebar:
+    tools:
+      - icon: house
+        href: https://louisaberdeen.dev/
+        aria-label: Home
   chapters:
     - index.md
     - chapters/01-history.md
