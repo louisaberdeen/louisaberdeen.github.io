@@ -4,8 +4,15 @@ project:
 website:
   title: "How clean are neural nets, how long is a piece of string?"
   site-url: https://louisaberdeen.dev/are-nets-already-clean/
+  navbar:
+    right:
+      - icon: house
+        href: https://louisaberdeen.dev/
+        aria-label: Home
 
 format:
   html:
-    theme: [darkly, sunset.scss]
+    theme:
+      light: [cosmo, solarized-light.scss]
+      dark: [darkly, solarized-dark.scss]
     toc: true

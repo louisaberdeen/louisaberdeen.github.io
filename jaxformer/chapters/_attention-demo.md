@@ -28,31 +28,30 @@
 </div>
 
 <style>
-.attn-demo { --peach:#edc19e; --horizon:#f8ba7d; --dusk:#84b4d8; --slate:#2f3c4b; --cream:#fdf6ef;
-  border:1px solid var(--slate); border-radius:8px; padding:1rem; margin:1.5rem 0; font-size:.9rem; }
+.attn-demo { border:1px solid var(--surface); border-radius:8px; padding:1rem; margin:1.5rem 0; font-size:.9rem; }
 .attn-demo .ad-row { display:flex; align-items:center; gap:.6rem; flex-wrap:wrap; margin-bottom:.6rem; }
-.attn-demo .ad-label { color:var(--horizon); min-width:7.5rem; }
-.attn-demo button { background:var(--slate); color:var(--cream); border:1px solid var(--slate);
+.attn-demo .ad-label { color:var(--accent); min-width:7.5rem; }
+.attn-demo button { background:var(--surface); color:var(--ink); border:1px solid var(--surface);
   border-radius:4px; padding:.15rem .6rem; margin:.1rem; cursor:pointer; font-family:inherit; }
-.attn-demo button.on { background:var(--horizon); color:#121418; border-color:var(--horizon); }
-.attn-demo input[type=range] { flex:1; min-width:8rem; max-width:18rem; accent-color:var(--horizon); }
+.attn-demo button.on { background:var(--accent); color:var(--on-accent); border-color:var(--accent); }
+.attn-demo input[type=range] { flex:1; min-width:8rem; max-width:18rem; accent-color:var(--accent); }
 .attn-demo .ad-scroll { overflow-x:auto; }
 .attn-demo table { border-collapse:separate; border-spacing:3px; margin:0; }
-.attn-demo th { font-weight:normal; color:var(--dusk); text-align:center; padding:0 .3rem; border:0; }
+.attn-demo th { font-weight:normal; color:var(--accent2); text-align:center; padding:0 .3rem; border:0; }
 .attn-demo td { padding:0 .3rem; border:0; text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; }
-.attn-demo td.ad-tok { text-align:left; color:var(--cream); }
-.attn-demo td.ad-cell { width:2.8rem; min-width:2.8rem; text-align:center; border-radius:3px; color:var(--cream); }
+.attn-demo td.ad-tok { text-align:left; color:var(--ink); }
+.attn-demo td.ad-cell { width:2.8rem; min-width:2.8rem; text-align:center; border-radius:3px; color:var(--ink); }
 .attn-demo .ad-track { display:inline-block; width:60px; vertical-align:middle; }
 .attn-demo td.ad-score { width:3rem; min-width:3rem; }
 .attn-demo #ad-temp-out { display:inline-block; width:3rem; }
-.attn-demo .ad-bar { display:block; height:.8rem; background:var(--horizon); border-radius:2px; vertical-align:middle; }
+.attn-demo .ad-bar { display:block; height:.8rem; background:var(--accent); border-radius:2px; vertical-align:middle; }
 .attn-demo .ad-w { display:inline-block; width:2.6rem; margin-right:.3rem; text-align:right; }
-.attn-demo .ad-eq, .attn-demo .ad-sum-label { color:var(--horizon); text-align:center; }
-.attn-demo tfoot td { padding-top:.5rem; border-top:1px solid var(--slate); }
+.attn-demo .ad-eq, .attn-demo .ad-sum-label { color:var(--accent); text-align:center; }
+.attn-demo tfoot td { padding-top:.5rem; border-top:1px solid var(--surface); }
 .attn-demo #ad-out { padding:0; }
 .attn-demo #ad-out span { display:inline-block; width:2.8rem; margin-right:3px; text-align:center; border-radius:3px;
-  outline:1px solid var(--horizon); color:var(--cream); }
-.attn-demo .ad-note { margin:.6rem 0 0; color:#afd2e4; }
+  outline:1px solid var(--accent); color:var(--ink); }
+.attn-demo .ad-note { margin:.6rem 0 0; color:var(--accent2); }
 </style>
 
 <script>
@@ -68,10 +67,10 @@
 
   const $ = id => document.getElementById(id);
   const temp = () => Math.pow(10, -1.3 + 2.6 * $("ad-temp").value / 100); // 0.05 … 20
-  // positive values in sunset orange, negative in sky blue
-  const shade = x => x >= 0 ? `rgba(248,186,125,${Math.min(1, Math.abs(x)) * .85})`
-                             : `rgba(132,180,216,${Math.min(1, Math.abs(x)) * .85})`;
-  const ink = x => Math.abs(x) > .5 ? "#121418" : "#fdf6ef"; // dark text once the cell is bright
+  // positive values in accent, negative in accent2
+  const shade = x => x >= 0 ? `color-mix(in srgb, var(--accent) ${100 * Math.min(1, Math.abs(x)) * .85}%, transparent)`
+                             : `color-mix(in srgb, var(--accent2) ${100 * Math.min(1, Math.abs(x)) * .85}%, transparent)`;
+  const ink = x => Math.abs(x) > .5 ? "var(--on-accent)" : "var(--ink)"; // dark text once the cell is bright
   const fmt = x => (Math.abs(x) < .005 ? 0 : x).toFixed(2); // no "-0.00"
   const cell = x => `<td class="ad-cell" style="background:${shade(x)};color:${ink(x)}">${fmt(x)}</td>`;
 

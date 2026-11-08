@@ -14,27 +14,26 @@
 </div>
 
 <style>
-.cv-demo { --horizon:#f8ba7d; --dusk:#84b4d8; --slate:#2f3c4b; --cream:#fdf6ef;
-  border:1px solid var(--slate); border-radius:8px; padding:1rem; margin:1.5rem 0; font-size:.9rem; }
+.cv-demo { border:1px solid var(--surface); border-radius:8px; padding:1rem; margin:1.5rem 0; font-size:.9rem; }
 .cv-demo .cv-row { display:flex; align-items:center; gap:.6rem; flex-wrap:wrap; margin-bottom:.6rem; }
-.cv-demo .cv-label { color:var(--horizon); min-width:7.5rem; }
-.cv-demo .cv-chip { background:var(--slate); color:var(--cream); border-radius:4px; padding:.15rem .6rem; margin:.1rem;
+.cv-demo .cv-label { color:var(--accent); min-width:7.5rem; }
+.cv-demo .cv-chip { background:var(--surface); color:var(--ink); border-radius:4px; padding:.15rem .6rem; margin:.1rem;
   transition:background .3s, color .3s; }
-.cv-demo .cv-chip.on { background:var(--horizon); color:#121418; }
-.cv-demo #cv-n { color:var(--cream); font-variant-numeric:tabular-nums; }
-.cv-demo .cv-legend { display:flex; gap:1.2rem; flex-wrap:wrap; margin:.2rem 0 .5rem; color:var(--cream); font-size:.85rem; }
+.cv-demo .cv-chip.on { background:var(--accent); color:var(--on-accent); }
+.cv-demo #cv-n { color:var(--ink); font-variant-numeric:tabular-nums; }
+.cv-demo .cv-legend { display:flex; gap:1.2rem; flex-wrap:wrap; margin:.2rem 0 .5rem; color:var(--ink); font-size:.85rem; }
 .cv-demo .cv-key { display:inline-block; width:.8rem; height:.8rem; border-radius:2px; margin-right:.35rem; vertical-align:-1px; }
-.cv-demo .cv-key.true { background:var(--dusk); }
-.cv-demo .cv-key.model { background:var(--horizon); }
+.cv-demo .cv-key.true { background:var(--accent2); }
+.cv-demo .cv-key.model { background:var(--accent); }
 .cv-demo .cv-word-row { display:flex; align-items:center; gap:.6rem; margin:.35rem 0; }
-.cv-demo .cv-word { min-width:7.5rem; text-align:right; color:var(--cream); }
+.cv-demo .cv-word { min-width:7.5rem; text-align:right; color:var(--ink); }
 .cv-demo .cv-pair { flex:0 1 22rem; display:flex; flex-direction:column; gap:2px; }
 .cv-demo .cv-fill { height:.6rem; border-radius:0 4px 4px 0; min-width:2px; transition:width .35s ease-out; }
-.cv-demo .cv-fill.true { background:var(--dusk); }
-.cv-demo .cv-fill.model { background:var(--horizon); }
-.cv-demo .cv-pcts { width:7rem; color:var(--cream); font-variant-numeric:tabular-nums; font-size:.8rem; line-height:1.15; }
+.cv-demo .cv-fill.true { background:var(--accent2); }
+.cv-demo .cv-fill.model { background:var(--accent); }
+.cv-demo .cv-pcts { width:7rem; color:var(--ink); font-variant-numeric:tabular-nums; font-size:.8rem; line-height:1.15; }
 .cv-demo #cv-chart { width:100%; max-width:520px; display:block; margin-top:.8rem; }
-.cv-demo #cv-chart text { fill:#afd2e4; font-size:11px; font-family:inherit; }
+.cv-demo #cv-chart text { fill:var(--accent2); font-size:11px; font-family:inherit; }
 </style>
 
 <script>
@@ -78,16 +77,16 @@
     const y = L => t + (Hh - t - b) * (1 - (Math.min(L, yMax) - yMin) / (yMax - yMin));
     const ticks = [];
     for (let e = 0; e <= xMax; e++)
-      ticks.push(`<line x1="${x(10 ** e)}" x2="${x(10 ** e)}" y1="${t}" y2="${Hh - b}" stroke="#2f3c4b"/>` +
+      ticks.push(`<line x1="${x(10 ** e)}" x2="${x(10 ** e)}" y1="${t}" y2="${Hh - b}" style="stroke:var(--surface)"/>` +
                  `<text x="${x(10 ** e)}" y="${Hh - b + 26}" text-anchor="middle">${10 ** e}</text>`);
     const path = hist.map(([N, L], i) => `${i ? "L" : "M"}${x(N).toFixed(1)},${y(L).toFixed(1)}`).join("");
     const last = hist[hist.length - 1];
     $("cv-chart").innerHTML =
       ticks.join("") +
-      `<line x1="${l}" x2="${W - r}" y1="${y(floor)}" y2="${y(floor)}" stroke="#84b4d8" stroke-dasharray="4 4"/>` +
+      `<line x1="${l}" x2="${W - r}" y1="${y(floor)}" y2="${y(floor)}" style="stroke:var(--accent2)" stroke-dasharray="4 4"/>` +
       `<text x="${W - r}" y="${y(floor) + 14}" text-anchor="end">entropy floor H(p*) = ${floor.toFixed(2)}</text>` +
-      `<path d="${path}" fill="none" stroke="#f8ba7d" stroke-width="2"/>` +
-      (last ? `<circle cx="${x(last[0])}" cy="${y(last[1])}" r="4" fill="#f8ba7d"/>` : "") +
+      `<path d="${path}" fill="none" style="stroke:var(--accent)" stroke-width="2"/>` +
+      (last ? `<circle cx="${x(last[0])}" cy="${y(last[1])}" r="4" style="fill:var(--accent)"/>` : "") +
       `<text x="${l - 6}" y="${y(yMax) + 4}" text-anchor="end">${yMax.toFixed(1)}</text>` +
       `<text x="${l - 6}" y="${y(yMin) + 4}" text-anchor="end">${yMin.toFixed(1)}</text>` +
       `<text x="${(l + W - r) / 2}" y="${Hh - 2}" text-anchor="middle">samples seen (log scale)</text>` +

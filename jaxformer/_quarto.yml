@@ -13,5 +13,7 @@ book:
 
 format:
   html:
-    theme: [darkly, sunset.scss]
+    theme:
+      light: [cosmo, solarized-light.scss]
+      dark: [darkly, solarized-dark.scss]
     toc: true

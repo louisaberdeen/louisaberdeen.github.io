@@ -5,10 +5,10 @@
 </div>
 
 <style>
-.dim-demo { border:1px solid #2f3c4b; border-radius:8px; padding:1rem; margin:1.5rem 0; }
+.dim-demo { border:1px solid var(--surface); border-radius:8px; padding:1rem; margin:1.5rem 0; }
 .dim-demo svg { width:100%; height:auto; display:block; font-family:Lato, Helvetica, Arial, sans-serif; }
-.dim-demo svg text { fill:#c9d4dc; font-size:12px; }
-.dim-demo .dim-note { color:#afd2e4; font-size:.85rem; margin:.6rem 0 0; }
+.dim-demo svg text { fill:var(--ink); font-size:12px; }
+.dim-demo .dim-note { color:var(--accent2); font-size:.85rem; margin:.6rem 0 0; }
 </style>
 
 <script>
@@ -28,10 +28,10 @@
 
   // axes
   for (const deg of [0, 45, 90, 135, 180]) {
-    el("line", { x1: X(deg), x2: X(deg), y1: y0, y2: y1, stroke: "#2f3c4b" });
+    el("line", { x1: X(deg), x2: X(deg), y1: y0, y2: y1, style: "stroke:var(--surface)" });
     el("text", { x: X(deg), y: y1 + 18, "text-anchor": "middle" }).textContent = deg + "°";
   }
-  el("line", { x1: x0, x2: x1, y1: y1, y2: y1, stroke: "#c9d4dc" });
+  el("line", { x1: x0, x2: x1, y1: y1, y2: y1, style: "stroke:var(--ink)" });
   el("text", { x: (x0 + x1) / 2, y: y1 + 38, "text-anchor": "middle" }).textContent = "angle between two random unit vectors";
   el("text", { x: 18, y: (y0 + y1) / 2, "text-anchor": "middle", transform: `rotate(-90 18 ${(y0 + y1) / 2})` }).textContent = "how often";
 
@@ -46,18 +46,18 @@
     return s;
   };
   for (const d of [2, 10, 100, 1000, 10000])
-    el("path", { d: curve(d), fill: "none", stroke: "#84b4d8", "stroke-opacity": 0.25, "stroke-width": 1 });
-  const live = el("path", { fill: "none", stroke: "#f8ba7d", "stroke-width": 2 });
+    el("path", { d: curve(d), fill: "none", style: "stroke:var(--accent2)", "stroke-opacity": 0.25, "stroke-width": 1 });
+  const live = el("path", { fill: "none", style: "stroke:var(--accent)", "stroke-width": 2 });
 
   // log-scale track for d
   const tx0 = 120, tx1 = 440, ty = 272;
   const T = d => tx0 + (tx1 - tx0) * Math.log(d / D0) / L;
-  el("line", { x1: tx0, x2: tx1, y1: ty, y2: ty, stroke: "#2f3c4b", "stroke-width": 4, "stroke-linecap": "round" });
+  el("line", { x1: tx0, x2: tx1, y1: ty, y2: ty, style: "stroke:var(--surface)", "stroke-width": 4, "stroke-linecap": "round" });
   for (const [d, lab] of [[2, "2"], [10, "10"], [100, "100"], [1000, "1k"], [10000, "10k"]]) {
-    el("line", { x1: T(d), x2: T(d), y1: ty - 6, y2: ty + 6, stroke: "#c9d4dc" });
+    el("line", { x1: T(d), x2: T(d), y1: ty - 6, y2: ty + 6, style: "stroke:var(--ink)" });
     el("text", { x: T(d), y: ty + 20, "text-anchor": "middle", "font-size": 11 }).textContent = lab;
   }
-  const dot = el("circle", { cy: ty, r: 6, fill: "#f8ba7d" });
+  const dot = el("circle", { cy: ty, r: 6, style: "fill:var(--accent)" });
   const lab = el("text", { x: tx0 - 14, y: ty + 4, "text-anchor": "end" });
 
   const draw = d => {

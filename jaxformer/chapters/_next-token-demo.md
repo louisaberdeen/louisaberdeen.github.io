@@ -16,30 +16,29 @@
 </div>
 
 <style>
-.nt-demo { --horizon:#f8ba7d; --dusk:#84b4d8; --slate:#2f3c4b; --cream:#fdf6ef;
-  border:1px solid var(--slate); border-radius:8px; padding:1rem; margin:1.5rem 0; font-size:.9rem; }
+.nt-demo { border:1px solid var(--surface); border-radius:8px; padding:1rem; margin:1.5rem 0; font-size:.9rem; }
 .nt-demo .nt-row { display:flex; align-items:center; gap:.6rem; flex-wrap:wrap; margin-bottom:.6rem; }
-.nt-demo .nt-label { color:var(--horizon); min-width:7.5rem; }
-.nt-demo button { background:var(--slate); color:var(--cream); border:1px solid var(--slate);
+.nt-demo .nt-label { color:var(--accent); min-width:7.5rem; }
+.nt-demo button { background:var(--surface); color:var(--ink); border:1px solid var(--surface);
   border-radius:4px; padding:.15rem .6rem; margin:.1rem; cursor:pointer; font-family:inherit; }
-.nt-demo button.on { background:var(--horizon); color:#121418; border-color:var(--horizon); }
-.nt-demo button.next { border-color:var(--dusk); }
-.nt-demo button.nt-ghost { background:none; color:var(--dusk); border-color:var(--dusk); margin-left:auto; }
-.nt-demo #nt-ctx { color:var(--cream); }
-.nt-demo #nt-ctx .dim { color:#6b7a8c; }
+.nt-demo button.on { background:var(--accent); color:var(--on-accent); border-color:var(--accent); }
+.nt-demo button.next { border-color:var(--accent2); }
+.nt-demo button.nt-ghost { background:none; color:var(--accent2); border-color:var(--accent2); margin-left:auto; }
+.nt-demo #nt-ctx { color:var(--ink); }
+.nt-demo #nt-ctx .dim { color:var(--muted); }
 .nt-demo .nt-bar-row { display:flex; align-items:center; gap:.6rem; margin:.25rem 0; }
-.nt-demo .nt-word { min-width:7.5rem; text-align:right; color:var(--cream); }
+.nt-demo .nt-word { min-width:7.5rem; text-align:right; color:var(--ink); }
 .nt-demo .nt-track { flex:0 1 22rem; height:1rem; position:relative; }
-.nt-demo .nt-fill { height:100%; background:var(--horizon); border-radius:0 4px 4px 0; min-width:2px; }
-.nt-demo .nt-bar-row.target .nt-fill { background:var(--dusk); }
-.nt-demo .nt-pct { width:3rem; text-align:right; font-variant-numeric:tabular-nums; color:var(--cream); }
-.nt-demo .nt-tag { color:var(--dusk); font-size:.8rem; white-space:nowrap; }
-.nt-demo .nt-loss #nt-loss { font-variant-numeric:tabular-nums; color:var(--cream); }
+.nt-demo .nt-fill { height:100%; background:var(--accent); border-radius:0 4px 4px 0; min-width:2px; }
+.nt-demo .nt-bar-row.target .nt-fill { background:var(--accent2); }
+.nt-demo .nt-pct { width:3rem; text-align:right; font-variant-numeric:tabular-nums; color:var(--ink); }
+.nt-demo .nt-tag { color:var(--accent2); font-size:.8rem; white-space:nowrap; }
+.nt-demo .nt-loss #nt-loss { font-variant-numeric:tabular-nums; color:var(--ink); }
 .nt-demo #nt-strip { display:inline-flex; gap:3px; flex-wrap:wrap; }
 .nt-demo #nt-strip span { display:inline-block; width:2.6rem; text-align:center; border-radius:3px; cursor:pointer;
-  font-variant-numeric:tabular-nums; color:var(--cream); outline:1px solid var(--slate); }
-.nt-demo #nt-strip span.on { outline:2px solid var(--horizon); }
-.nt-demo #nt-mean { color:var(--horizon); font-variant-numeric:tabular-nums; }
+  font-variant-numeric:tabular-nums; color:var(--ink); outline:1px solid var(--surface); }
+.nt-demo #nt-strip span.on { outline:2px solid var(--accent); }
+.nt-demo #nt-mean { color:var(--accent); font-variant-numeric:tabular-nums; }
 </style>
 
 <script>
@@ -59,7 +58,7 @@
   const sample = p => { let r = Math.random(); for (let i = 0; i < p.length; i++) if ((r -= p[i]) < 0) return i; return p.length - 1; };
   const loss = t => -Math.log(P[seq[t]][vocab.indexOf(seq[t + 1])]);
   // darker cell = more surprised; capped at 3 nats so one bad token doesn't wash the rest out
-  const heat = x => `rgba(248,186,125,${Math.min(1, x / 3) * .85})`;
+  const heat = x => `color-mix(in srgb, var(--accent) ${100 * Math.min(1, x / 3) * .85}%, transparent)`;
 
   function draw() {
     const p = P[seq[pos]], next = seq[pos + 1];

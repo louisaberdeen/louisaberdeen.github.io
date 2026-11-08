@@ -1,0 +1,21 @@
+/*-- scss:defaults --*/
+$body-bg: #002b36;          // base03
+$body-color: #839496;       // base0
+$headings-color: #93a1a1;   // base1
+$link-color: #268bd2;       // blue
+$primary: #268bd2;
+$secondary: #073642;        // base02
+$sidebar-bg: #002b36;
+$sidebar-fg: #93a1a1;
+$footer-bg: #002b36;
+$navbar-bg: #073642;
+$navbar-fg: #93a1a1;
+$code-color: #2aa198;       // cyan
+$code-block-bg: #073642;
+$border-color: #073642;
+$input-bg: #073642;
+$input-color: #93a1a1;
+
+/*-- scss:rules --*/
+// shared by the inline demos
+:root { --ink:#93a1a1; --muted:#586e75; --surface:#073642; --accent:#b58900; --accent2:#268bd2; --on-accent:#002b36; }

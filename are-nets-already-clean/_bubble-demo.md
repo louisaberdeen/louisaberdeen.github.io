@@ -17,7 +17,7 @@
   const cx = 280, cy = 140, R = 52;           // R pixels = radius 1
   const D0 = 2, D1 = 10000, L = Math.log(D1 / D0);
 
-  el("circle", { cx, cy, r: R, fill: "none", stroke: "#84b4d8", "stroke-opacity": 0.7, "stroke-dasharray": "3 3" });
+  el("circle", { cx, cy, r: R, fill: "none", style: "stroke:var(--accent2)", "stroke-opacity": 0.7, "stroke-dasharray": "3 3" });
 
   // Each dot keeps a fixed angle and a fixed normal quantile z, so it moves smoothly as d changes.
   // ‖x‖² / d is chi-squared / d; Wilson–Hilferty: chi²_d / d ≈ (1 − 2/(9d) + z·√(2/(9d)))³
@@ -26,19 +26,19 @@
   const gauss = () => Math.sqrt(-2 * Math.log(rand())) * Math.cos(2 * Math.PI * rand());
   const dots = Array.from({ length: 700 }, () => ({
     z: gauss(), c: Math.cos(2 * Math.PI * rand()), s: 0,
-    e: el("circle", { r: 1.5, fill: "#f8ba7d", "fill-opacity": 0.65 }),
+    e: el("circle", { r: 1.5, style: "fill:var(--accent)", "fill-opacity": 0.65 }),
   }));
   dots.forEach(p => { p.s = Math.sign(rand() - 0.5) * Math.sqrt(1 - p.c * p.c); });
 
   // log-scale track for d
   const tx0 = 120, tx1 = 440, ty = 302;
   const T = d => tx0 + (tx1 - tx0) * Math.log(d / D0) / L;
-  el("line", { x1: tx0, x2: tx1, y1: ty, y2: ty, stroke: "#2f3c4b", "stroke-width": 4, "stroke-linecap": "round" });
+  el("line", { x1: tx0, x2: tx1, y1: ty, y2: ty, style: "stroke:var(--surface)", "stroke-width": 4, "stroke-linecap": "round" });
   for (const [d, lab] of [[2, "2"], [10, "10"], [100, "100"], [1000, "1k"], [10000, "10k"]]) {
-    el("line", { x1: T(d), x2: T(d), y1: ty - 6, y2: ty + 6, stroke: "#c9d4dc" });
+    el("line", { x1: T(d), x2: T(d), y1: ty - 6, y2: ty + 6, style: "stroke:var(--ink)" });
     el("text", { x: T(d), y: ty + 20, "text-anchor": "middle", "font-size": 11 }).textContent = lab;
   }
-  const dot = el("circle", { cy: ty, r: 6, fill: "#f8ba7d" });
+  const dot = el("circle", { cy: ty, r: 6, style: "fill:var(--accent)" });
   const lab = el("text", { x: tx0 - 14, y: ty + 4, "text-anchor": "end" });
 
   const draw = d => {

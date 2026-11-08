@@ -1,89 +1,90 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 570 306" font-family="Lato, Helvetica, Arial, sans-serif" font-size="13">
-<text x="250.0" y="20.0" text-anchor="middle" fill="#c9d4dc">A = W<tspan font-size="10" dy="3">in</tspan><tspan dy="-3"> U,   A</tspan><tspan font-size="10" dy="3">ni</tspan><tspan dy="-3"> = w</tspan><tspan font-size="10" dy="3">n</tspan><tspan dy="-3"> · u</tspan><tspan font-size="10" dy="3">i</tspan></text>
-<text x="97.0" y="42.0" text-anchor="middle" fill="#c9d4dc" font-size="11">u1</text>
-<text x="131.0" y="42.0" text-anchor="middle" fill="#c9d4dc" font-size="11">u2</text>
-<text x="165.0" y="42.0" text-anchor="middle" fill="#c9d4dc" font-size="11">u3</text>
-<text x="199.0" y="42.0" text-anchor="middle" fill="#c9d4dc" font-size="11">u4</text>
-<text x="233.0" y="42.0" text-anchor="middle" fill="#c9d4dc" font-size="11">u5</text>
-<text x="267.0" y="42.0" text-anchor="middle" fill="#c9d4dc" font-size="11">u6</text>
-<text x="301.0" y="42.0" text-anchor="middle" fill="#c9d4dc" font-size="11">u7</text>
-<text x="335.0" y="42.0" text-anchor="middle" fill="#c9d4dc" font-size="11">u8</text>
-<text x="369.0" y="42.0" text-anchor="middle" fill="#c9d4dc" font-size="11">u9</text>
-<text x="403.0" y="42.0" text-anchor="middle" fill="#c9d4dc" font-size="11">u10</text>
-<text x="70.0" y="71.0" text-anchor="end" fill="#c9d4dc" font-size="12">neuron 1</text>
-<rect x="81" y="51" width="32" height="32" rx="3" fill="#535354"/>
-<rect x="115" y="51" width="32" height="32" rx="3" fill="#5d5856"/>
-<rect x="149" y="51" width="32" height="32" rx="3" fill="#36404c"/>
-<rect x="183" y="51" width="32" height="32" rx="3" fill="#39424d"/>
-<rect x="217" y="51" width="32" height="32" rx="3" fill="#37414d"/>
-<rect x="251" y="51" width="32" height="32" rx="3" fill="#323e4b"/>
-<rect x="285" y="51" width="32" height="32" rx="3" fill="#535254"/>
-<rect x="319" y="51" width="32" height="32" rx="3" fill="#333e4c"/>
-<rect x="353" y="51" width="32" height="32" rx="3" fill="#3e454e"/>
-<rect x="387" y="51" width="32" height="32" rx="3" fill="#6b6159"/>
-<text x="70.0" y="105.0" text-anchor="end" fill="#c9d4dc" font-size="12">neuron 2</text>
-<rect x="81" y="85" width="32" height="32" rx="3" fill="#333e4c"/>
-<rect x="115" y="85" width="32" height="32" rx="3" fill="#353f4c"/>
-<rect x="149" y="85" width="32" height="32" rx="3" fill="#343f4c"/>
-<rect x="183" y="85" width="32" height="32" rx="3" fill="#3b434e"/>
-<rect x="217" y="85" width="32" height="32" rx="3" fill="#42474f"/>
-<rect x="251" y="85" width="32" height="32" rx="3" fill="#36404c"/>
-<rect x="285" y="85" width="32" height="32" rx="3" fill="#edb37a"/>
-<rect x="319" y="85" width="32" height="32" rx="3" fill="#333e4c"/>
-<rect x="353" y="85" width="32" height="32" rx="3" fill="#40464f"/>
-<rect x="387" y="85" width="32" height="32" rx="3" fill="#323e4b"/>
-<text x="70.0" y="139.0" text-anchor="end" fill="#c9d4dc" font-size="12">neuron 3</text>
-<rect x="81" y="119" width="32" height="32" rx="3" fill="#2f3c4b"/>
-<rect x="115" y="119" width="32" height="32" rx="3" fill="#4a4d51"/>
-<rect x="149" y="119" width="32" height="32" rx="3" fill="#38424d"/>
-<rect x="183" y="119" width="32" height="32" rx="3" fill="#cfa073"/>
-<rect x="217" y="119" width="32" height="32" rx="3" fill="#323e4b"/>
-<rect x="251" y="119" width="32" height="32" rx="3" fill="#38424d"/>
-<rect x="285" y="119" width="32" height="32" rx="3" fill="#525153"/>
-<rect x="319" y="119" width="32" height="32" rx="3" fill="#333f4c"/>
-<rect x="353" y="119" width="32" height="32" rx="3" fill="#333e4c"/>
-<rect x="387" y="119" width="32" height="32" rx="3" fill="#41474f"/>
-<text x="70.0" y="173.0" text-anchor="end" fill="#c9d4dc" font-size="12">neuron 4</text>
-<rect x="81" y="153" width="32" height="32" rx="3" fill="#3f464e"/>
-<rect x="115" y="153" width="32" height="32" rx="3" fill="#343f4c"/>
-<rect x="149" y="153" width="32" height="32" rx="3" fill="#3e464e"/>
-<rect x="183" y="153" width="32" height="32" rx="3" fill="#39424d"/>
-<rect x="217" y="153" width="32" height="32" rx="3" fill="#303d4b"/>
-<rect x="251" y="153" width="32" height="32" rx="3" fill="#3b434e"/>
-<rect x="285" y="153" width="32" height="32" rx="3" fill="#625c57"/>
-<rect x="319" y="153" width="32" height="32" rx="3" fill="#41474f"/>
-<rect x="353" y="153" width="32" height="32" rx="3" fill="#40464f"/>
-<rect x="387" y="153" width="32" height="32" rx="3" fill="#4d4e52"/>
-<text x="70.0" y="207.0" text-anchor="end" fill="#c9d4dc" font-size="12">neuron 5</text>
-<rect x="81" y="187" width="32" height="32" rx="3" fill="#343f4c"/>
-<rect x="115" y="187" width="32" height="32" rx="3" fill="#e3ad78"/>
-<rect x="149" y="187" width="32" height="32" rx="3" fill="#37414d"/>
-<rect x="183" y="187" width="32" height="32" rx="3" fill="#42484f"/>
-<rect x="217" y="187" width="32" height="32" rx="3" fill="#2f3c4b"/>
-<rect x="251" y="187" width="32" height="32" rx="3" fill="#c59a70"/>
-<rect x="285" y="187" width="32" height="32" rx="3" fill="#484b51"/>
-<rect x="319" y="187" width="32" height="32" rx="3" fill="#3c444e"/>
-<rect x="353" y="187" width="32" height="32" rx="3" fill="#d9a775"/>
-<rect x="387" y="187" width="32" height="32" rx="3" fill="#434850"/>
-<text x="70.0" y="241.0" text-anchor="end" fill="#c9d4dc" font-size="12">neuron 6</text>
-<rect x="81" y="221" width="32" height="32" rx="3" fill="#323e4b"/>
-<rect x="115" y="221" width="32" height="32" rx="3" fill="#3f464f"/>
-<rect x="149" y="221" width="32" height="32" rx="3" fill="#39424d"/>
-<rect x="183" y="221" width="32" height="32" rx="3" fill="#39424d"/>
-<rect x="217" y="221" width="32" height="32" rx="3" fill="#323e4b"/>
-<rect x="251" y="221" width="32" height="32" rx="3" fill="#3d444e"/>
-<rect x="285" y="221" width="32" height="32" rx="3" fill="#333e4c"/>
-<rect x="319" y="221" width="32" height="32" rx="3" fill="#5c5856"/>
-<rect x="353" y="221" width="32" height="32" rx="3" fill="#3b434e"/>
-<rect x="387" y="221" width="32" height="32" rx="3" fill="#37414d"/>
-<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#c9d4dc"/></marker></defs>
-<path d="M462 101.0H434" stroke="#c9d4dc" stroke-width="1.5" marker-end="url(#a)"/>
-<text x="468.0" y="105.0" text-anchor="start" fill="#c9d4dc">monosemantic</text>
-<path d="M462 203.0H434" stroke="#c9d4dc" stroke-width="1.5" marker-end="url(#a)"/>
-<text x="468.0" y="207.0" text-anchor="start" fill="#c9d4dc">polysemantic</text>
-<text x="250.0" y="274.0" text-anchor="middle" fill="#c9d4dc" font-size="12">features</text>
-<defs><linearGradient id="g"><stop offset="0" stop-color="#2f3c4b"/><stop offset="1" stop-color="#f8ba7d"/></linearGradient></defs>
+<rect x="0" y="0" width="570" height="306" rx="8" fill="#002b36"/>
+<text x="250.0" y="20.0" text-anchor="middle" fill="#93a1a1">A = W<tspan font-size="10" dy="3">in</tspan><tspan dy="-3"> U,   A</tspan><tspan font-size="10" dy="3">ni</tspan><tspan dy="-3"> = w</tspan><tspan font-size="10" dy="3">n</tspan><tspan dy="-3"> · u</tspan><tspan font-size="10" dy="3">i</tspan></text>
+<text x="97.0" y="42.0" text-anchor="middle" fill="#93a1a1" font-size="11">u1</text>
+<text x="131.0" y="42.0" text-anchor="middle" fill="#93a1a1" font-size="11">u2</text>
+<text x="165.0" y="42.0" text-anchor="middle" fill="#93a1a1" font-size="11">u3</text>
+<text x="199.0" y="42.0" text-anchor="middle" fill="#93a1a1" font-size="11">u4</text>
+<text x="233.0" y="42.0" text-anchor="middle" fill="#93a1a1" font-size="11">u5</text>
+<text x="267.0" y="42.0" text-anchor="middle" fill="#93a1a1" font-size="11">u6</text>
+<text x="301.0" y="42.0" text-anchor="middle" fill="#93a1a1" font-size="11">u7</text>
+<text x="335.0" y="42.0" text-anchor="middle" fill="#93a1a1" font-size="11">u8</text>
+<text x="369.0" y="42.0" text-anchor="middle" fill="#93a1a1" font-size="11">u9</text>
+<text x="403.0" y="42.0" text-anchor="middle" fill="#93a1a1" font-size="11">u10</text>
+<text x="70.0" y="71.0" text-anchor="end" fill="#93a1a1" font-size="12">neuron 1</text>
+<rect x="81" y="51" width="32" height="32" rx="3" fill="#264536"/>
+<rect x="115" y="51" width="32" height="32" rx="3" fill="#2e4933"/>
+<rect x="149" y="51" width="32" height="32" rx="3" fill="#0d3940"/>
+<rect x="183" y="51" width="32" height="32" rx="3" fill="#0f3a3f"/>
+<rect x="217" y="51" width="32" height="32" rx="3" fill="#0e393f"/>
+<rect x="251" y="51" width="32" height="32" rx="3" fill="#0a3741"/>
+<rect x="285" y="51" width="32" height="32" rx="3" fill="#264536"/>
+<rect x="319" y="51" width="32" height="32" rx="3" fill="#0a3841"/>
+<rect x="353" y="51" width="32" height="32" rx="3" fill="#143c3d"/>
+<rect x="387" y="51" width="32" height="32" rx="3" fill="#3b4f2e"/>
+<text x="70.0" y="105.0" text-anchor="end" fill="#93a1a1" font-size="12">neuron 2</text>
+<rect x="81" y="85" width="32" height="32" rx="3" fill="#0a3841"/>
+<rect x="115" y="85" width="32" height="32" rx="3" fill="#0c3840"/>
+<rect x="149" y="85" width="32" height="32" rx="3" fill="#0b3840"/>
+<rect x="183" y="85" width="32" height="32" rx="3" fill="#113b3e"/>
+<rect x="217" y="85" width="32" height="32" rx="3" fill="#173e3c"/>
+<rect x="251" y="85" width="32" height="32" rx="3" fill="#0d3940"/>
+<rect x="285" y="85" width="32" height="32" rx="3" fill="#ab8404"/>
+<rect x="319" y="85" width="32" height="32" rx="3" fill="#0a3841"/>
+<rect x="353" y="85" width="32" height="32" rx="3" fill="#153d3d"/>
+<rect x="387" y="85" width="32" height="32" rx="3" fill="#0a3741"/>
+<text x="70.0" y="139.0" text-anchor="end" fill="#93a1a1" font-size="12">neuron 3</text>
+<rect x="81" y="119" width="32" height="32" rx="3" fill="#073642"/>
+<rect x="115" y="119" width="32" height="32" rx="3" fill="#1e4139"/>
+<rect x="149" y="119" width="32" height="32" rx="3" fill="#0f3a3f"/>
+<rect x="183" y="119" width="32" height="32" rx="3" fill="#91780d"/>
+<rect x="217" y="119" width="32" height="32" rx="3" fill="#0a3741"/>
+<rect x="251" y="119" width="32" height="32" rx="3" fill="#0f3a3f"/>
+<rect x="285" y="119" width="32" height="32" rx="3" fill="#254437"/>
+<rect x="319" y="119" width="32" height="32" rx="3" fill="#0b3841"/>
+<rect x="353" y="119" width="32" height="32" rx="3" fill="#0a3841"/>
+<rect x="387" y="119" width="32" height="32" rx="3" fill="#163d3c"/>
+<text x="70.0" y="173.0" text-anchor="end" fill="#93a1a1" font-size="12">neuron 4</text>
+<rect x="81" y="153" width="32" height="32" rx="3" fill="#153d3d"/>
+<rect x="115" y="153" width="32" height="32" rx="3" fill="#0b3840"/>
+<rect x="149" y="153" width="32" height="32" rx="3" fill="#143c3d"/>
+<rect x="183" y="153" width="32" height="32" rx="3" fill="#0f3a3f"/>
+<rect x="217" y="153" width="32" height="32" rx="3" fill="#083642"/>
+<rect x="251" y="153" width="32" height="32" rx="3" fill="#113b3e"/>
+<rect x="285" y="153" width="32" height="32" rx="3" fill="#334b31"/>
+<rect x="319" y="153" width="32" height="32" rx="3" fill="#163d3c"/>
+<rect x="353" y="153" width="32" height="32" rx="3" fill="#153d3d"/>
+<rect x="387" y="153" width="32" height="32" rx="3" fill="#214238"/>
+<text x="70.0" y="207.0" text-anchor="end" fill="#93a1a1" font-size="12">neuron 5</text>
+<rect x="81" y="187" width="32" height="32" rx="3" fill="#0b3840"/>
+<rect x="115" y="187" width="32" height="32" rx="3" fill="#a38007"/>
+<rect x="149" y="187" width="32" height="32" rx="3" fill="#0e393f"/>
+<rect x="183" y="187" width="32" height="32" rx="3" fill="#173e3c"/>
+<rect x="217" y="187" width="32" height="32" rx="3" fill="#073642"/>
+<rect x="251" y="187" width="32" height="32" rx="3" fill="#897411"/>
+<rect x="285" y="187" width="32" height="32" rx="3" fill="#1c403a"/>
+<rect x="319" y="187" width="32" height="32" rx="3" fill="#123b3e"/>
+<rect x="353" y="187" width="32" height="32" rx="3" fill="#9a7c0a"/>
+<rect x="387" y="187" width="32" height="32" rx="3" fill="#183e3c"/>
+<text x="70.0" y="241.0" text-anchor="end" fill="#93a1a1" font-size="12">neuron 6</text>
+<rect x="81" y="221" width="32" height="32" rx="3" fill="#0a3741"/>
+<rect x="115" y="221" width="32" height="32" rx="3" fill="#153d3d"/>
+<rect x="149" y="221" width="32" height="32" rx="3" fill="#0f3a3f"/>
+<rect x="183" y="221" width="32" height="32" rx="3" fill="#0f3a3f"/>
+<rect x="217" y="221" width="32" height="32" rx="3" fill="#0a3741"/>
+<rect x="251" y="221" width="32" height="32" rx="3" fill="#133c3e"/>
+<rect x="285" y="221" width="32" height="32" rx="3" fill="#0a3841"/>
+<rect x="319" y="221" width="32" height="32" rx="3" fill="#2e4933"/>
+<rect x="353" y="221" width="32" height="32" rx="3" fill="#113b3e"/>
+<rect x="387" y="221" width="32" height="32" rx="3" fill="#0e393f"/>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#93a1a1"/></marker></defs>
+<path d="M462 101.0H434" stroke="#93a1a1" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="468.0" y="105.0" text-anchor="start" fill="#93a1a1">monosemantic</text>
+<path d="M462 203.0H434" stroke="#93a1a1" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="468.0" y="207.0" text-anchor="start" fill="#93a1a1">polysemantic</text>
+<text x="250.0" y="274.0" text-anchor="middle" fill="#93a1a1" font-size="12">features</text>
+<defs><linearGradient id="g"><stop offset="0" stop-color="#073642"/><stop offset="1" stop-color="#b58900"/></linearGradient></defs>
 <rect x="120" y="288" width="260" height="8" rx="4" fill="url(#g)"/>
-<text x="114.0" y="296.0" text-anchor="end" fill="#c9d4dc" font-size="11">weak</text>
-<text x="386.0" y="296.0" text-anchor="start" fill="#c9d4dc" font-size="11">strong</text>
+<text x="114.0" y="296.0" text-anchor="end" fill="#93a1a1" font-size="11">weak</text>
+<text x="386.0" y="296.0" text-anchor="start" fill="#93a1a1" font-size="11">strong</text>
 </svg>
