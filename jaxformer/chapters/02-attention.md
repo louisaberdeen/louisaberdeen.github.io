@@ -23,7 +23,12 @@ The sum of many small independent effects is Gaussian. The dot product of two ra
 
 {{< include _bubble-demo.md >}}
 
-I love [this article](https://jamiesimon.io/blog/how-to-win-a-beer-with-high-dimensional-statistics/) (Simon, 2026) which I think demonstrates the . 
+I love [this article](https://jamiesimon.io/blog/how-to-win-a-beer-with-high-dimensional-statistics/) (Simon, 2026) which I think demonstrates the funky properties of really big dimensional space. It's well known at this point transformer models will keep a cycle of related feature directions in a circle, this has been shown for counting, and days/months. However, because the number of dimensions allows for so many combinations, you're practically guaranteed to find any relationship you might want to go looking for in the embeddings. Simon shows this for words but this would be true for pretty much everything else.
+
+::: {.callout-note}
+## Aside
+This really nicely links with another post I've written called [How clean are neural nets, how long is a piece of string?](https://louisaberdeen.dev/are-nets-already-clean/) In it we deal with the tension between models having many possible interpretations of their internal state, which we try and understand for mechanistic interpretability, but we have to be careful to see what the model actually uses for computation.
+:::
 
 Also need to do multi head attention at some point..
 
