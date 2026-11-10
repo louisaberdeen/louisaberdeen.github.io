@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 610 440" font-family="Lato, Helvetica, Arial, sans-serif" font-size="13">
+<rect width="610" height="440" rx="8" fill="#002b36"/>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#93a1a1"/></marker></defs>
+<text x="20" y="28" text-anchor="start" fill="#93a1a1" font-weight="bold">Seq2seq</text>
+<rect x="30" y="80" width="56" height="32" rx="6" fill="#268bd2"/>
+<text x="58.0" y="100.5" text-anchor="middle" fill="#002b36">LSTM</text>
+<rect x="110" y="80" width="56" height="32" rx="6" fill="#268bd2"/>
+<text x="138.0" y="100.5" text-anchor="middle" fill="#002b36">LSTM</text>
+<rect x="190" y="80" width="56" height="32" rx="6" fill="#268bd2"/>
+<text x="218.0" y="100.5" text-anchor="middle" fill="#002b36">LSTM</text>
+<rect x="360" y="80" width="56" height="32" rx="6" fill="#268bd2"/>
+<text x="388.0" y="100.5" text-anchor="middle" fill="#002b36">LSTM</text>
+<rect x="440" y="80" width="56" height="32" rx="6" fill="#268bd2"/>
+<text x="468.0" y="100.5" text-anchor="middle" fill="#002b36">LSTM</text>
+<rect x="520" y="80" width="56" height="32" rx="6" fill="#268bd2"/>
+<text x="548.0" y="100.5" text-anchor="middle" fill="#002b36">LSTM</text>
+<path d="M86 96H108" fill="none" stroke="#93a1a1" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M166 96H188" fill="none" stroke="#93a1a1" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M416 96H438" fill="none" stroke="#93a1a1" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M496 96H518" fill="none" stroke="#93a1a1" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="280" y="80" width="40" height="32" rx="6" fill="#cb4b16"/>
+<text x="300.0" y="100.5" text-anchor="middle" fill="#002b36">c</text>
+<path d="M246 96H278" fill="none" stroke="#93a1a1" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M320 96H358" fill="none" stroke="#93a1a1" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="58.0" y="150" text-anchor="middle" fill="#93a1a1">the</text>
+<path d="M58.0 136V114" fill="none" stroke="#93a1a1" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="138.0" y="150" text-anchor="middle" fill="#93a1a1">cat</text>
+<path d="M138.0 136V114" fill="none" stroke="#93a1a1" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="218.0" y="150" text-anchor="middle" fill="#93a1a1">sat</text>
+<path d="M218.0 136V114" fill="none" stroke="#93a1a1" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="388.0" y="50" text-anchor="middle" fill="#93a1a1">die</text>
+<path d="M388.0 80V58" fill="none" stroke="#93a1a1" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="468.0" y="50" text-anchor="middle" fill="#93a1a1">Katze</text>
+<path d="M468.0 80V58" fill="none" stroke="#93a1a1" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="548.0" y="50" text-anchor="middle" fill="#93a1a1">saß</text>
+<path d="M548.0 80V58" fill="none" stroke="#93a1a1" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="300" y="130" text-anchor="middle" fill="#93a1a1">context vector</text>
+<text x="138" y="172" text-anchor="middle" fill="#93a1a1">Encoder</text>
+<text x="468" y="172" text-anchor="middle" fill="#93a1a1">Decoder</text>
+<path d="M20 196H590" stroke="#073642" stroke-width="2"/>
+<text x="20" y="228" text-anchor="start" fill="#93a1a1" font-weight="bold">Bahdanau attention</text>
+<rect x="30" y="340" width="56" height="32" rx="6" fill="#268bd2"/>
+<text x="58.0" y="360.5" text-anchor="middle" fill="#002b36">LSTM</text>
+<rect x="110" y="340" width="56" height="32" rx="6" fill="#268bd2"/>
+<text x="138.0" y="360.5" text-anchor="middle" fill="#002b36">LSTM</text>
+<rect x="190" y="340" width="56" height="32" rx="6" fill="#268bd2"/>
+<text x="218.0" y="360.5" text-anchor="middle" fill="#002b36">LSTM</text>
+<rect x="360" y="340" width="56" height="32" rx="6" fill="#268bd2"/>
+<text x="388.0" y="360.5" text-anchor="middle" fill="#002b36">LSTM</text>
+<rect x="440" y="340" width="56" height="32" rx="6" fill="#268bd2"/>
+<text x="468.0" y="360.5" text-anchor="middle" fill="#002b36">LSTM</text>
+<rect x="520" y="340" width="56" height="32" rx="6" fill="#268bd2"/>
+<text x="548.0" y="360.5" text-anchor="middle" fill="#002b36">LSTM</text>
+<path d="M86 356H108" fill="none" stroke="#93a1a1" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M166 356H188" fill="none" stroke="#93a1a1" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M416 356H438" fill="none" stroke="#93a1a1" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M496 356H518" fill="none" stroke="#93a1a1" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M246 356H358" fill="none" stroke="#93a1a1" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="58.0" y="410" text-anchor="middle" fill="#93a1a1">the</text>
+<path d="M58.0 396V374" fill="none" stroke="#93a1a1" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="138.0" y="410" text-anchor="middle" fill="#93a1a1">cat</text>
+<path d="M138.0 396V374" fill="none" stroke="#93a1a1" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="218.0" y="410" text-anchor="middle" fill="#93a1a1">sat</text>
+<path d="M218.0 396V374" fill="none" stroke="#93a1a1" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="250" y="250" width="100" height="36" rx="6" fill="#b58900"/>
+<text x="300.0" y="272.5" text-anchor="middle" fill="#002b36">Attention</text>
+<path d="M58.0 338L270 288" fill="none" stroke="#93a1a1" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M138.0 338L290 288" fill="none" stroke="#93a1a1" stroke-width="1.5" marker-end="url(#a)"/>
+<path d="M218.0 338L310 288" fill="none" stroke="#93a1a1" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="150" y="300" text-anchor="end" fill="#93a1a1">weights</text>
+<path d="M388.0 338L340 288" fill="none" stroke="#93a1a1" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="394" y="314" text-anchor="start" fill="#93a1a1">query</text>
+<path d="M350 268L460 338" fill="none" stroke="#93a1a1" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="430" y="276" text-anchor="start" fill="#93a1a1">context</text>
+<text x="138" y="432" text-anchor="middle" fill="#93a1a1">Encoder</text>
+<text x="468" y="432" text-anchor="middle" fill="#93a1a1">Decoder</text>
+</svg>
