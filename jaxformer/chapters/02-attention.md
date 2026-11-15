@@ -23,18 +23,21 @@ The sum of many small independent effects is Gaussian. The dot product of two ra
 
 {{< include _bubble-demo.md >}}
 
-I love [this article](https://jamiesimon.io/blog/how-to-win-a-beer-with-high-dimensional-statistics/) (Simon, 2026) which I think demonstrates the funky properties of really big dimensional space. It's well known at this point transformer models will keep a cycle of related feature directions in a circle, this has been shown for counting, and days/months. However, because the number of dimensions allows for so many combinations, you're practically guaranteed to find any relationship you might want to go looking for in the embeddings. Simon shows this for words but this would be true for pretty much everything else.
+I love [this article](https://jamiesimon.io/blog/how-to-win-a-beer-with-high-dimensional-statistics/) (Simon, 2026) which I think demonstrates the funky properties of really high dimensional spaces. It's well known at this point transformer models will keep a cycle of related features in embedding space such that the model can cycle through them by rotating, this has been shown for counting (Gurnee et al., 2025), and days/months (Engels et al., 2024). However, because the number of dimensions allows for so many combinations, you're practically guaranteed to find any relationship you might want to go looking for in the embeddings. Simon shows this for words but this would be true for pretty much everything else.
 
 ::: {.callout-note}
 ## Aside
-This really nicely links with another post I've written called [How clean are neural nets, how long is a piece of string?](https://louisaberdeen.dev/are-nets-already-clean/) In it we deal with the tension between models having many possible interpretations of their internal state, which we try and understand for mechanistic interpretability, but we have to be careful to see what the model actually uses for computation.
+This really nicely links with another post I've written [How clean are neural nets, how long is a piece of string?](https://louisaberdeen.dev/are-nets-already-clean/) In it we deal with the tension between models having many possible interpretations of their internal state, which we try and understand for mechanistic interpretability, but we have to be careful to see what the model actually uses for computation.
 :::
-
-Also need to do multi head attention at some point..
 
 There is a distinction to be made between cross-attention (like in Bahdanau) where the queries came from the decoder and the keys/values from the encoder and self-attention. In self-attention the attention attends all on the input $X$.
 
 {{< include _attention-demo.md >}}
+
+I will add a quick note about multi-headed attention, the concept is pretty simple to understand. Imagine our model is like a person, and every time we feed it text we send it to just one person. Any one person will only have so much expertise in any topic, and making one person knowledgeable in everything is very difficult. What if instead we could have a group of people, with different jobs and perspectives (grammar vs numeracy in this analogy) who collaborate on an input sequence. This is essentially what we do. Instead of having one single attention calculation performed for our input, we could split between many "heads" which build their own patterns which get incorporated together. Not to be confused with "Mixture of Experts" which I will talk about later on. Splitting the attention into heads also has performance benefits too. When the attention is split into separate heads there are opportunities to parallelise or reduce redundancy (which I will talk more on later).
+
+{{< include _multihead-diagram.md >}}
+
 
 ## The transformer block
 
@@ -98,3 +101,7 @@ talk through (Puranik, 2026) basically
 4. Simon, J. (2026). *How to Win a Beer with High-Dimensional Statistics.* <https://jamiesimon.io/blog/how-to-win-a-beer-with-high-dimensional-statistics/>
 
 5. Puranik, A. (2026). *Using Group Theory to Explore the Space of Positional Encodings for Attention.* Jane Street Blog. <https://blog.janestreet.com/using-group-theory-to-explore-positional-encodings-attention/>
+
+6. Engels, J., Michaud, E. J., Liao, I., Gurnee, W., & Tegmark, M. (2024). *Not All Language Model Features Are One-Dimensionally Linear.* arXiv:2405.14860. <https://arxiv.org/abs/2405.14860>
+
+7. Gurnee, W., et al. (2025). *When Models Manipulate Manifolds: The Geometry of a Counting Task.* Transformer Circuits Thread. <https://transformer-circuits.pub/2025/linebreaks/index.html>
