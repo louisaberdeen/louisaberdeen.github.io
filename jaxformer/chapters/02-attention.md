@@ -43,7 +43,7 @@ I will add a quick note about multi-headed attention, the concept is pretty simp
 
 Continuing through the "Attention is all you need" paper (Vaswani et al., 2017), we now need to connect our attention mechanism into a machine learning model this is done with a Transformer, Attention models and transformers are used interchangeably but I think it is a useful distinction to make. A transformer starts with attention over the inputs followed by a feed forward network typically with a residual connection and some layer normalisation. 
 
-![The Transformer, redrawn from Figure 1 of Vaswani et al. (2017). Encoder on the left, decoder on the right.](figures/transformer.svg){fig-alt="Transformer architecture: an encoder stack of multi-head attention and feed-forward layers with residual add-and-norm, feeding a decoder stack of masked attention, cross-attention and feed-forward layers, then linear and softmax."}
+{{< include _transformer-diagram.md >}}
 
 In the original paper the layer norm is applied to the residual but modern transformers move the residual outside the layer norm. The motivation is you want the residual stream to represent the identity function which allows gradients to flow evenly during training. The intuition is without residual stream early into training the early layers get good updates but later layers get basically random updates. In practice this modification results in more stable training with less warm up (Xiong et al., 2020).
 
