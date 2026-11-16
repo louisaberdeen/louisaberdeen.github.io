@@ -9,6 +9,10 @@
     <input type="range" id="attn-temp" min="0" max="100" value="50">
     <output id="attn-temp-out"></output>
   </div>
+  <div class="attn-row attn-controls">
+    <label class="attn-label" for="attn-causal">Causal mask</label>
+    <input type="checkbox" id="attn-causal">
+  </div>
   <div class="attn-scroll">
     <table class="attn-table">
       <thead><tr>
@@ -24,7 +28,8 @@
     </table>
   </div>
   <p class="attn-note">Each output column is the sum of the column above it. Turn τ down and almost all the weight lands
-  on one key, which is a dictionary lookup. Turn it up and the output becomes a plain average of every value.</p>
+  on one key, which is a dictionary lookup. Turn it up and the output becomes a plain average of every value.
+  With the causal mask on, keys after the query get a score of −∞, so they get zero weight and the token can't see the future.</p>
 </div>
 
 <style>
@@ -51,6 +56,8 @@
 .attn-demo #attn-out { padding:0; }
 .attn-demo #attn-out span { display:inline-block; width:2.8rem; margin-right:3px; text-align:center; border-radius:3px;
   outline:1px solid var(--accent); color:var(--ink); }
+.attn-demo input[type=checkbox] { accent-color:var(--accent); }
+.attn-demo tr.attn-masked { opacity:.35; }
 .attn-demo .attn-note { margin:.6rem 0 0; color:var(--accent2); }
 </style>
 
@@ -77,19 +84,22 @@
   $("attn-tokens").innerHTML = tokens.map((t, i) => `<button data-i="${i}">${t}</button>`).join("");
   $("attn-tokens").addEventListener("click", e => { if (e.target.dataset.i) { qi = +e.target.dataset.i; draw(); } });
   $("attn-temp").addEventListener("input", draw);
+  $("attn-causal").addEventListener("change", draw);
 
   function draw() {
     const t = temp();
     $("attn-temp-out").textContent = t.toFixed(2);
     document.querySelectorAll("#attn-tokens button").forEach((b, i) => b.classList.toggle("on", i === qi));
-    const scores = K.map(k => k.reduce((s, kj, j) => s + kj * Q[qi][j], 0) / Math.sqrt(dk));
+    const causal = $("attn-causal").checked;
+    // causal: keys after the query are set to -inf before the softmax, so exp() makes them exactly 0
+    const scores = K.map((k, i) => causal && i > qi ? -Infinity : k.reduce((s, kj, j) => s + kj * Q[qi][j], 0) / Math.sqrt(dk));
     const m = Math.max(...scores);
     const e = scores.map(s => Math.exp((s - m) / t));
     const z = e.reduce((a, b) => a + b, 0);
     const w = e.map(x => x / z);
     const out = [0, 1, 2, 3].map(j => w.reduce((s, wi, i) => s + wi * V[i][j], 0));
     $("attn-body").innerHTML = tokens.map((tok, i) =>
-      `<tr><td class="attn-tok">${tok}</td><td class="attn-score">${fmt(scores[i])}</td>` +
+      `<tr${scores[i] === -Infinity ? ' class="attn-masked"' : ""}><td class="attn-tok">${tok}</td><td class="attn-score">${scores[i] === -Infinity ? "−∞" : fmt(scores[i])}</td>` +
       `<td><span class="attn-w">${(100 * w[i]).toFixed(0)}%</span><span class="attn-track"><span class="attn-bar" style="width:${(60 * w[i]).toFixed(1)}px"></span></span></td>` +
       V[i].map(cell).join("") + `<td class="attn-eq">→</td>` + V[i].map(v => cell(w[i] * v)).join("") + `</tr>`
     ).join("");

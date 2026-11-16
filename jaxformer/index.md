@@ -2,7 +2,7 @@
 
 I love Richard Feynman and his lectures are a big influence for why I studied mathematics (because I didn't understand it). I think this quote basically sums up why I wrote this article. 
 
-"If you can't explain something to a first year student, then you haven't really understood."
+"What I cannot create, I do not understand."
 
 I want to push myself to understand these AI models as deeply as I possibly can, because it seems likely they are the most significant technological development in history, so it will probably come in handy.
 

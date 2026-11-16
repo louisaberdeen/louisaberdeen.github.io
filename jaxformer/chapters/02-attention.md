@@ -13,6 +13,8 @@ $$
 
 This has the nice property where every token can attend to any other token. I think of Query being the relevant information the token is looking for, the Key being what a token represents itself as so other tokens can find it, and the Value is the actual information handed over. Whereas before our recurrent models were bottlenecked by their iterative multiplication attention allows the model to represent relationships arbitrarily far apart (While this is true in theory we will see in practice there are constraints on how far this can go). RNNs are also bottlenecked by the amount of information they can retain in their hidden dimension, there is only so much information that can be stored in 4096 values right, as well as the backpropagation through time relying on sequential computation. 
 
+{{< include _attention-demo.md >}}
+
 It is worth highlighting the $\sqrt{d_k}$ normalisation in the attention calculation since to me it was not immediately obvious why we scale by the dimension axis rather than unit normalise. Basically as the number of dimensions grows the expected value of a random dot product stays 0 but the variance scales with $d_k$.
 
 To see why consider this non-intuitive idea: In 2D two random directions often point in similar directions. In 10,000D, there are so many directions that two random vectors are almost always at ~90°. The Johnson–Lindenstrauss theorem states you can put $n$ points into $k = O(\log n / \varepsilon^2)$ dimensions and keep all distances within a factor $1 \pm \varepsilon$, which you can invert to get $n = e^{O(\varepsilon^2 k)}$ nearly orthogonal directions in $k$ dimensions.
@@ -31,8 +33,6 @@ This really nicely links with another post I've written [How clean are neural ne
 :::
 
 There is a distinction to be made between cross-attention (like in Bahdanau) where the queries came from the decoder and the keys/values from the encoder and self-attention. In self-attention the attention attends all on the input $X$.
-
-{{< include _attention-demo.md >}}
 
 I will add a quick note about multi-headed attention, the concept is pretty simple to understand. Imagine our model is like a person, and every time we feed it text we send it to just one person. Any one person will only have so much expertise in any topic, and making one person knowledgeable in everything is very difficult. What if instead we could have a group of people, with different jobs and perspectives (grammar vs numeracy in this analogy) who collaborate on an input sequence. This is essentially what we do. Instead of having one single attention calculation performed for our input, we could split between many "heads" which build their own patterns which get incorporated together. Not to be confused with "Mixture of Experts" which I will talk about later on. Splitting the attention into heads also has performance benefits too. When the attention is split into separate heads there are opportunities to parallelise or reduce redundancy (which I will talk more on later).
 
