@@ -1,7 +1,7 @@
 /*-- scss:defaults --*/
 $body-bg: #002b36;          // base03
-$body-color: #839496;       // base0
-$headings-color: #93a1a1;   // base1
+$body-color: #93a1a1;       // base1 (bumped from base0 for contrast)
+$headings-color: #a9b6b6;   // a touch above base1
 $link-color: #268bd2;       // blue
 $primary: #268bd2;
 $secondary: #073642;        // base02
@@ -18,7 +18,7 @@ $input-color: #93a1a1;
 
 /*-- scss:rules --*/
 // shared by the inline demos
-:root { --ink:#93a1a1; --muted:#586e75; --surface:#073642; --accent:#b58900; --accent2:#268bd2; --on-accent:#002b36; }
+:root { --ink:#a3b0b0; --muted:#657b83; --surface:#073642; --accent:#b58900; --accent2:#268bd2; --on-accent:#002b36; }
 
 // sun in light mode, moon in dark (Bootstrap Icons paths), tinted with the text colour
 .quarto-color-scheme-toggle .bi::before { background-image: none !important; background-color: currentColor;

@@ -25,7 +25,7 @@ The sum of many small independent effects is Gaussian. The dot product of two ra
 
 {{< include _bubble-demo.md >}}
 
-I love [this article](https://jamiesimon.io/blog/how-to-win-a-beer-with-high-dimensional-statistics/) (Simon, 2026) which I think demonstrates the funky properties of really high dimensional spaces. It's well known at this point transformer models will keep a cycle of related features in embedding space such that the model can cycle through them by rotating, this has been shown for counting (Gurnee et al., 2025), and days/months (Engels et al., 2024). However, because the number of dimensions allows for so many combinations, you're practically guaranteed to find any relationship you might want to go looking for in the embeddings. Simon shows this for words but this would be true for pretty much everything else.
+I love [this article](https://jamiesimon.io/blog/how-to-win-a-beer-with-high-dimensional-statistics/) (Simon, 2026) which demonstrates the funky properties of really high dimensional spaces. It's well known at this point transformer models will keep a cycle of related features in embedding space such that the model can cycle through them by rotating, this has been shown for counting (Gurnee et al., 2025), and days/months (Engels et al., 2024). However, because the number of dimensions allows for so many combinations, you're practically guaranteed to find any relationship you might want to go looking for in the embeddings. Simon shows this for words but this would be true for pretty much everything else.
 
 ::: {.callout-note}
 ## Aside
@@ -71,9 +71,27 @@ pe = np.random.normal(size=(max_len, d_model))  # trained like any other weight
 x = token_embeddings + pe[:seq_len]
 ```
 
-So for each token up to our maximum sequence length we add a modification to the token embeddings which describe their absolute position in the model. The issue with this approach is it is brittle to a few things; first is the absolute nature means the model doesn't generalise well to situations where the meaning in a sequence is similar but the particular ordering could confuse the model, and the second is the model often doesn't perform well further into its context window.
+So for each token up to our maximum sequence length we add a vector to the token embeddings which describes their absolute position in the sequence. This approach is brittle to a few things; first the absolute nature means the model doesn't generalise well because the model needs to see an example at every position in the sequence to learn a position embedding. A concrete example is the phrase "The dog jumped" has the same relational meaning at position 1-3 as 35000-35002, but the model needs to learn a new position embedding for every scenario. The second issue is the model often doesn't get as many training examples at longer contexts so it won't perform as well further into its context window.
 
-What is done instead is called Rotary Position Embeddings (RoPE)
+What is done in most modern models instead is called Rotary Position Embeddings (RoPE). The idea is simple; what if we could simply encode the relative position between tokens without any absolute position information. In terms of properties we would like translation invariance when we are calculating the score between queries and keys:
+$$
+\begin{aligned}
+   \langle f(q, m), f(k, n) \rangle = g(q, k, n - m) 
+\end{aligned}
+$$
+
+Where $f$ is our unknown position function, and $g$ is the attention score calculated without any knowledge of $n$ or $m$ only the relative distance $n-m$. We will assume that $f$ will be a linear function (they're just much nicer to work with, easier to calculate etc). Let us write $f$ as $f(x, m) = R_m x$ and work through the implications:
+
+- $\langle R_m q, R_n k \rangle = q^\top R_m^\top R_n k$ this follows from substituting into the dot product.
+- For our translation invariance we need $R_m^\top R_n = R_{n-m}$ for any $m$ and $n$. 
+- Without loss of generality we can assume $R_m$ must be the identity $I$ when $m=0$ 
+- When $m=n$,  $R_m^\top R_m = I$, implying $R_m$ is orthogonal, meaning its transpose is its inverse. 
+- In the same vein we set $n=0$ and $R_m^\top = R_{-m}$
+- We combine the above concepts and we can show $R_{m+n} = R_{-m}^\top R_n = R_m R_n$ so $f$ composes.
+- Because $R_m$ composes it immediately follows $R_m = R^{m}$ (easiest to show via induction)
+
+Put this together and we have an $R$ a 2D orthogonal linear operator in the form $R_m=R^m$. The operator we are describing is exactly a rotation by some $\theta$, so $R^m$ is a rotation by $m\theta$ (Puranik, 2026). The way this is applied in practice for $Q$ and $K$ with dimension $d$ is to apply $d/2$ rotations along the diagonal. Typically different frequencies are used along the diagonal. The main reason is because a single theta would wrap around and cause ambiguity, but you can think of a low frequency encoding a long term relationship and the high frequency encoding a short term relationship.
+
 
 ```python
 def rope(x, base=10000.0):
@@ -88,7 +106,9 @@ def rope(x, base=10000.0):
     return rotated.reshape(x.shape)
 ```
 
-talk through (Puranik, 2026) basically
+{{< include _rope-diagram.md >}}
+
+
 
 ## References
 
